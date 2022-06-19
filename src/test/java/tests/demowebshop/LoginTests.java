@@ -17,6 +17,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 
+
 @Story("Login tests")
 public class LoginTests extends TestBase {
 
@@ -84,5 +85,7 @@ public class LoginTests extends TestBase {
         step("Verify successful authorization", () ->
                 $(".account").shouldHave(text(login)));
     }
+
+
 }
 
