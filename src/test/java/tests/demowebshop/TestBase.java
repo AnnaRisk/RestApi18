@@ -23,8 +23,7 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        AppConfig links = ConfigFactory
-                .create(AppConfig.class);
+        AppConfig links = ConfigFactory.create(AppConfig.class);
         Configuration.baseUrl = links.webUrl();
         RestAssured.baseURI = links.apiUrl();
 
