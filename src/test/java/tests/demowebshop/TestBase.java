@@ -27,8 +27,7 @@ public class TestBase {
         Configuration.baseUrl = links.webUrl();
         RestAssured.baseURI = links.apiUrl();
 
-        AppConfig remoteConfig = ConfigFactory
-                .create(AppConfig.class);
+        AppConfig remoteConfig = ConfigFactory.create(AppConfig.class);
         String remoteLogin = remoteConfig.selenoidLogin();
         String remotePassword = remoteConfig.selenoidPassword();
         String remoteUrl = remoteConfig.remoteUrl();
