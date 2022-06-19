@@ -26,8 +26,8 @@ public class LoginTests extends TestBase {
 
     @BeforeAll
     static void configureBaseUrl() {
-        RestAssured.baseURI = App.config.apiUrl();
-        Configuration.baseUrl = App.config.webUrl();
+      //  RestAssured.baseURI = App.config.apiUrl();
+      //  Configuration.baseUrl = App.config.webUrl();
 
         login = App.config.userLogin();
         password = App.config.userPassword();
