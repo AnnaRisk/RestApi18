@@ -23,11 +23,13 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        AppConfig links = ConfigFactory.create(AppConfig.class);
-        Configuration.baseUrl = links.webUrl();
-        RestAssured.baseURI = links.apiUrl();
+       // AppConfig links = ConfigFactory.create(AppConfig.class);
+       // Configuration.baseUrl = links.webUrl();
+       // RestAssured.baseURI = links.apiUrl();
 
         AppConfig remoteConfig = ConfigFactory.create(AppConfig.class);
+        Configuration.baseUrl = remoteConfig.webUrl();
+        RestAssured.baseURI = remoteConfig.apiUrl();
         String remoteLogin = remoteConfig.selenoidLogin();
         String remotePassword = remoteConfig.selenoidPassword();
         String remoteUrl = remoteConfig.remoteUrl();
