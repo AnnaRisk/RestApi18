@@ -63,19 +63,13 @@ public class TestBase {
 
 
     @AfterEach
-    public void afterEach() {
-        String sessionId = DriverUtils.getSessionId();
-
-        AllureAttachments.addScreenshotAs("Last screenshot");
+    void afterEach() {
+        AllureAttachments.addScreenshotAs("Screen");
         AllureAttachments.addPageSource();
-//        AllureAttachments.attachNetwork(); // todo
         AllureAttachments.addBrowserConsoleLogs();
-
-        Selenide.closeWebDriver();
-
-        if (Project.isVideoOn()) {
-            AllureAttachments.addVideo(sessionId);
-        }
+        AllureAttachments.addVideo(sessionId);
+        closeWebDriver();
+    }
 
     }
-}
+
